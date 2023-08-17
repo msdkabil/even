@@ -19,3 +19,6 @@ def get_weather():
     resp = Response(data)
     resp.status_code = 200
     return render_template('index.html', title='Weather App', data=json.loads(data.read().decode('utf8')))
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
