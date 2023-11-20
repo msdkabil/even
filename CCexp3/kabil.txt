@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>EVEN NUMBERS</title>
+</head>
+<body>
+<font size=5>display N even numbers</font>
+<form action="even.php" method="post">
+<br>
+ENTER FIRST NUMBER:<input type="text" name="t1">
+</br><br>
+ENTER SECOND NUMBER:<input type="text" name="t2"></br>
+<input type="submit" value="SUBMIT" name="submit">
+<?php
+if(isset($_POST["submit"]))
+{
+$n1=$_POST["t1"];
+$n2=$_POST["t2"];
+echo "even numbers between" .$n1. "and" .$n2. "are";
+for($i=$n1;$i<=$n2;$i++)
+{
+if($i%2==0)
+echo $i;
+echo " ";
+}
+}?>
+</form>
+</html>
+
+
+
+
+runtime: php55
+api_version: 1
+threadsafe: true
+handlers:
+- url: /.*
+script: even.php
