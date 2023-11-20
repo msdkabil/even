@@ -1,14 +1,20 @@
-from flask import Flask, request, render_template
-import requests
+from flask import Flask
 
 app = Flask(__name__)
   
-@app.route('/', methods =["GET", "POST"])
-def index(): 
-    n=int(input("Enter the value of n:")
-    for(i in range(1,2n+1):
-        if((i%2)==0)
-          print(i,end=" ")
+@app.route('/')
 
-if __name__ == "__main__":
-    app.run()
+def hello():
+    """Return a friendly HTTP greeting."""
+    i=0
+    n=10
+    b=[]
+    while(n>0):
+        a=n*2
+        b[i]=a
+        n-=1
+        i+=1
+    return(b)
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
